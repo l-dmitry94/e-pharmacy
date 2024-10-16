@@ -4,6 +4,8 @@ import { Inter } from 'next/font/google';
 
 import Header from '@/components/shared/Header';
 
+import Providers from './providers';
+
 import '@/styles/globals.scss';
 
 export const metadata: Metadata = {
@@ -21,8 +23,10 @@ const RootLayout: FC<IRootLayout> = ({ children }) => {
     return (
         <html lang="en">
             <body className={inter.className}>
-                <Header />
-                {children}
+                <Providers>
+                    <Header />
+                    {children}
+                </Providers>
             </body>
         </html>
     );

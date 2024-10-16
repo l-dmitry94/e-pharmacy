@@ -3,14 +3,12 @@ import { getServerSession } from 'next-auth';
 
 import authOptions from '@/configs/next-auth';
 
-const HomePage = async () => {
+const CreateShopPage = async () => {
     const session = await getServerSession(authOptions);
 
-    if (session) {
-        redirect('/create-shop');
-    } else {
-        redirect('/register');
-    }
+    if (!session) redirect('/login');
+
+    return <div>CreateShopPage</div>;
 };
 
-export default HomePage;
+export default CreateShopPage;

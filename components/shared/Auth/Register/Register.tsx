@@ -1,11 +1,17 @@
 'use client';
 
 import { Path } from 'react-hook-form';
+import toast from 'react-hot-toast';
+import { isAxiosError } from 'axios';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import { signIn } from 'next-auth/react';
 
 import Button from '@/components/ui/Button';
 import Form from '@/components/ui/Form';
 import Input from '@/components/ui/Input';
+import { signup } from '@/services/auth.api';
+import { IRegisterData } from '@/types/auth';
 
 import Auth from '../Auth';
 
@@ -14,16 +20,31 @@ import validationSchema from './registerValidationSchema';
 
 import scss from './Register.module.scss';
 
-interface IRegisterData {
-    name: string;
-    email: string;
-    phone: string;
-    password: string;
-}
-
 const Register = () => {
-    const handleSubmit = (data: IRegisterData) => {
-        console.log(data);
+    const router = useRouter();
+
+    const handleSubmit = async (data: IRegisterData) => {
+        try {
+            const response = await signup(data);
+
+            if (response.status === 201) {
+                toast.success(response.data.message);
+
+                const signInResponse = await signIn('credentials', {
+                    email: data.email,
+                    password: data.password,
+                    redirect: false,
+                });
+
+                if (signInResponse?.ok) {
+                    router.replace('/create-shop');
+                }
+            }
+        } catch (error) {
+            if (isAxiosError(error)) {
+                toast.error(error.response?.data.message);
+            }
+        }
     };
 
     return (
