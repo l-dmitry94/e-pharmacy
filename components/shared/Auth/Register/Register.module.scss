@@ -1,0 +1,23 @@
+@import '@/styles/mixins';
+
+.wrapper {
+    @apply mb-5 flex flex-col gap-[0.625rem];
+
+    @include media-rules(tablet) {
+        @apply mb-[62px] flex-row flex-wrap gap-[0.875rem];
+    }
+}
+
+.buttonWrapper {
+    @include media-rules(tablet) {
+        @apply w-[280px];
+    }
+}
+
+.linkWrapper {
+    @apply mt-[0.875rem] text-center;
+}
+
+.link {
+    @apply text-xs leading-normal text-primary/40;
+}

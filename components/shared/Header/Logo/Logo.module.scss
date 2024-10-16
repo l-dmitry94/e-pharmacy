@@ -1,0 +1,25 @@
+@import '@/styles/mixins';
+
+.logo {
+    @apply flex items-center gap-3;
+
+    @include media-rules(tablet) {
+        @apply gap-[0.875rem];
+    }
+}
+
+.logoIcon {
+    @apply h-8 w-8;
+
+    @include media-rules(tablet) {
+        @apply h-11 w-11;
+    }
+}
+
+.logoText {
+    @apply text-base font-semibold -tracking-[0.03em];
+
+    @include media-rules(tablet) {
+        @apply text-xl;
+    }
+}

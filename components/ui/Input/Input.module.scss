@@ -1,0 +1,29 @@
+@import '@/styles/mixins';
+
+.inputWrapper {
+    @apply relative;
+}
+
+.input {
+    @apply border-primary/10 rounded-60 h-11 w-full border bg-white px-[1.125rem] outline-none text-xs leading-normal;
+
+    @include media-rules(tablet) {
+        @apply w-[280px];
+    }
+
+    &::placeholder {
+        @apply text-primary/40;
+    }
+
+    &.success {
+        @apply border-green;
+    }
+
+    &.error {
+        @apply border-red-500;
+    }
+}
+
+.error {
+    @apply text-xs text-red-500;
+}

@@ -1,0 +1,13 @@
+@import '@/styles/mixins';
+
+.header {
+    @apply pt-6;
+
+    & .container {
+        @apply max-w-screen-desktop;
+
+        @include media-rules(desktop) {
+            @apply px-[100px];
+        }
+    }
+}

@@ -1,0 +1,69 @@
+@import '@/styles/mixins';
+
+.auth {
+    @apply pt-[106px];
+
+    @include media-rules(tablet) {
+        @apply pt-[168px];
+    }
+
+    & .container {
+        @include media-rules(desktop) {
+            @apply px-[100px];
+        }
+    }
+}
+
+.innerWrapper {
+    @include media-rules(desktop) {
+        @apply flex;
+    }
+
+    &.register {
+        @include media-rules(desktop) {
+            @apply gap-12;
+        }
+    }
+
+    &.login {
+        @include media-rules(desktop) {
+            @apply gap-[150px];
+        }
+    }
+}
+
+.wrapper {
+    @apply relative mb-5;
+
+    @include media-rules(tablet) {
+        @apply mb-[3.375rem] max-w-[614px];
+    }
+
+    @include media-rules(desktop) {
+        @apply mb-0;
+    }
+}
+
+.title {
+    @apply text-[1.75rem] font-semibold leading-[1.21];
+
+    @include media-rules(tablet) {
+        @apply text-[3.375rem] leading-[1.11];
+    }
+
+    &Color {
+        @apply text-green;
+    }
+}
+
+.pill {
+    @apply absolute -top-[56px] right-5 h-[93px] w-[95px];
+
+    @include media-rules(tablet) {
+        @apply -top-[110px] h-[175px] w-[179px];
+    }
+}
+
+.icon {
+    @apply w-[334px] h-[249px] ml-auto mt-6 fill-green/10;
+}

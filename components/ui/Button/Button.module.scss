@@ -1,0 +1,39 @@
+.button {
+    @apply rounded-60 bg-primary flex h-11 w-[167px] items-center justify-center font-medium leading-[1.29] text-background transition-colors duration-150 ease-linear;
+
+    &.primary {
+        @apply bg-green;
+
+        &:hover {
+            @apply bg-green-dark;
+        }
+    }
+
+    &.contained {
+        @apply text-green bg-green/10;
+
+        &:hover {
+            @apply bg-green text-white;
+        }
+    }
+
+    &.secondary {
+        @apply bg-primary/10 text-primary/40;
+
+        &:hover {
+            @apply bg-primary/25;
+        }
+    }
+
+    &.outlined {
+        @apply text-green border-green/50 border bg-transparent;
+
+        &:hover {
+            @apply bg-green border-green text-white;
+        }
+    }
+}
+
+.fullWidth {
+    @apply w-full;
+}
