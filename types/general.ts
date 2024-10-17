@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 
 export interface IGeneral {
-    children: ReactNode;
+    children?: ReactNode;
     className?: string;
 }

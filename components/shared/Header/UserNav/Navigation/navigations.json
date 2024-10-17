@@ -1,0 +1,16 @@
+[
+    {
+        "label": "Shop",
+        "href": "/create-shop"
+    },
+
+    {
+        "label": "Medicine",
+        "href": "/medicine"
+    },
+
+    {
+        "label": "Statistics",
+        "href": "/statistics"
+    }
+]

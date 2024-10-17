@@ -1,0 +1,35 @@
+@import '@/styles/mixins';
+
+.navigation {
+    @apply pt-[260px];
+}
+
+.navigationList {
+    @apply mx-auto flex flex-col gap-2 text-center;
+
+    @include media-rules(desktop) {
+        @apply flex-row;
+    }
+}
+
+.listItem {
+    @apply relative;
+
+    &:not(:last-child)::after {
+        @apply absolute -bottom-2 left-1/2 z-10 h-2 w-4 -translate-x-1/2 border-x border-x-[#f1f1f1] bg-white content-[''];
+
+        @include media-rules(desktop) {
+            @apply -right-4 top-1/2 -translate-y-1/2 h-4 w-3 border-x-0;
+            bottom: inherit;
+            left: inherit
+        }
+    }
+}
+
+.link {
+    @apply inline-block rounded-60 border-8 border-white bg-white px-5 py-2 leading-none text-[#93939a] outline outline-[#f1f1f1];
+
+    &.active {
+        @apply bg-green text-white;
+    }
+}

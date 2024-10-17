@@ -95,6 +95,14 @@
             <path
                 d="M1.664 9.832c0.919-2.275 3.509-3.374 5.784-2.455l34.72 14.028-3.329 8.239-34.72-14.028c-2.275-0.919-3.374-3.509-2.455-5.784z"></path>
         </symbol>
+        <symbol id="icon-burger" viewBox="0 0 39 32">
+            <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4"
+                stroke-width="2.4615" d="M34.877 16.255h-29.538"></path>
+            <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4"
+                stroke-width="2.4615" d="M34.877 9.855h-29.538"></path>
+            <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4"
+                stroke-width="2.4615" d="M34.877 22.655h-29.538"></path>
+        </symbol>
     </defs>
 </svg>
     

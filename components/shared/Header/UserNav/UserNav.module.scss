@@ -1,0 +1,56 @@
+@import '@/styles/mixins';
+
+.userNav {
+    & .userNavDesktop {
+        @apply hidden;
+        
+        @include media-rules(desktop) {
+            @apply flex items-center gap-[312px];
+
+            & .navigation {
+                @apply pt-0;
+            }
+        }
+    }
+
+    & .userNavWrapper {
+        @include media-rules(desktop) {
+            @apply hidden;
+        }
+    
+        & .burgerIcon {
+            @apply h-[1.625rem] w-8 stroke-green transition-colors duration-150 ease-linear;
+    
+            &:hover {
+                @apply stroke-green-dark;
+            }
+        }
+    
+        & .drawer {
+            @apply bg-green;
+            width: 210px !important;
+    
+            @include media-rules(tablet) {
+                width: 334px !important;
+            }
+        }
+    
+        & .drawerContent {
+            @apply relative flex h-full flex-col justify-between overflow-auto pb-10;
+        }
+    
+        & .close {
+            @apply absolute right-5 top-8;
+    
+            @include media-rules(tablet) {
+                @apply right-8 top-10;
+            }
+        }
+    
+        & .closeIcon {
+            @apply h-8 w-8 stroke-white;
+        }
+    }
+}
+
+

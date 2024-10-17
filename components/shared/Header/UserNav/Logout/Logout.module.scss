@@ -1,0 +1,21 @@
+@import '@/styles/mixins';
+
+.buttonWrapper {
+    @apply mx-auto;
+
+    & .button {
+        @apply h-10 w-[107px] border-[#F1F1F1] font-normal leading-none text-white;
+
+        &:hover {
+            @apply bg-white text-green;
+        }
+
+        @include media-rules(desktop) {
+            @apply w-[115px] h-11 border-green text-green;
+
+            &:hover {
+                @apply bg-green text-white;
+            }
+        }
+    }
+}

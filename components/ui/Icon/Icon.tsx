@@ -9,17 +9,18 @@ type IconVariant =
     | 'arrow-left'
     | 'arrow-right'
     | 'attachment'
+    | 'burger'
     | 'chevron-down'
     | 'close'
     | 'coins'
+    | 'elements'
     | 'facebook'
     | 'filter'
     | 'instagram'
     | 'location'
     | 'phone'
     | 'users'
-    | 'youtube'
-    | 'elements';
+    | 'youtube';
 
 interface IIcon extends SVGProps<SVGSVGElement> {
     variant: IconVariant;
