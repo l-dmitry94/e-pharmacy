@@ -50,7 +50,7 @@ const Register = () => {
     return (
         <Auth variant="register">
             <Form<IRegisterData> onSubmit={handleSubmit} validationSchema={validationSchema}>
-                {(register, errors) => (
+                {(register, errors, isSubmitting) => (
                     <>
                         <div className={scss.wrapper}>
                             {registerFields.map((field) => (
@@ -66,7 +66,12 @@ const Register = () => {
                         </div>
 
                         <div className={scss.buttonWrapper}>
-                            <Button type="submit" fullWidth className={scss.button}>
+                            <Button
+                                type="submit"
+                                fullWidth
+                                loading={isSubmitting}
+                                className={scss.button}
+                            >
                                 Register
                             </Button>
 

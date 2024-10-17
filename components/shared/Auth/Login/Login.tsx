@@ -41,7 +41,7 @@ const Login = () => {
     return (
         <Auth variant="login">
             <Form<ILoginData> onSubmit={handleSubmit} validationSchema={validationSchema}>
-                {(register, errors) => (
+                {(register, errors, isSubmitting) => (
                     <>
                         <div className={scss.wrapper}>
                             {loginFields.map((field) => (
@@ -57,7 +57,7 @@ const Login = () => {
                         </div>
 
                         <div className={scss.buttonWrapper}>
-                            <Button type="submit" fullWidth>
+                            <Button type="submit" loading={isSubmitting} fullWidth>
                                 Log in
                             </Button>
 

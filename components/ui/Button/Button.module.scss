@@ -1,5 +1,9 @@
 .button {
-    @apply rounded-60 bg-primary flex h-11 w-[167px] items-center justify-center font-medium leading-[1.29] text-background transition-colors duration-150 ease-linear;
+    @apply flex h-11 w-[167px] items-center justify-center gap-2 rounded-60 bg-primary font-medium leading-[1.29] text-background transition-colors duration-150 ease-linear;
+    
+    &:disabled {
+        @apply cursor-not-allowed;
+    }
 
     &.primary {
         @apply bg-green;
@@ -7,13 +11,29 @@
         &:hover {
             @apply bg-green-dark;
         }
+
+        &:disabled {
+            @apply bg-green/50;
+
+            &:hover {
+                @apply bg-green/50;
+            }
+        }
     }
 
     &.contained {
-        @apply text-green bg-green/10;
+        @apply bg-green/10 text-green;
 
         &:hover {
             @apply bg-green text-white;
+        }
+
+        &:disabled {
+            @apply bg-green/20;
+
+            &:hover {
+                @apply bg-green/20;
+            }
         }
     }
 
@@ -23,13 +43,29 @@
         &:hover {
             @apply bg-primary/25;
         }
+
+        &:disabled {
+            @apply bg-primary/10;
+
+            &:hover {
+                @apply bg-primary/10;
+            }
+        }
     }
 
     &.outlined {
-        @apply text-green border-green/50 border bg-transparent;
+        @apply border border-green/50 bg-transparent text-green;
 
         &:hover {
-            @apply bg-green border-green text-white;
+            @apply border-green bg-green text-white;
+        }
+
+        &:disabled {
+            @apply border-green/50 bg-transparent text-green/50;
+
+            &:hover {
+                @apply border-green/50 bg-transparent text-green/50;
+            }
         }
     }
 }
